@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "lib/**.jar",
+        "/Users/earendelh/Documents/CS213DB/project1/Midterm_Project/Midterm_Project/src/gson-2.10.1.jar"
+    ]
+}
