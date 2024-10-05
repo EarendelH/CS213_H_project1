@@ -1,0 +1,600 @@
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<!DOCTYPE html><html><head>
+      <title>Project1_report</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,'Noto Sans SC',"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Noto Sans SC','Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:'Noto Sans SC',Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="cs213-database-project1">CS213 Database Project1 </h1>
+<ul>
+<li>
+<p><strong>Student Name: 王子恒</strong></p>
+</li>
+<li>
+<p><strong>Student ID: 12310401</strong></p>
+</li>
+</ul>
+<h2 id="目录">目录 </h2>
+<ul>
+<li><a href="#cs213-database-project1">CS213 Database Project1</a>
+<ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a>
+<ul>
+<li><a href="#%E8%83%8C%E6%99%AF%E6%9F%A5%E8%AF%A2">背景查询</a></li>
+<li><a href="#project%E7%9B%AE%E7%9A%84">project目的</a></li>
+<li><a href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98">研究问题</a></li>
+<li><a href="#report%E7%BB%93%E6%9E%84">Report结构</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%BA%90">数据源</a></li>
+<li><a href="#b%E7%AB%99%E6%AF%8F%E5%91%A8%E5%BF%85%E7%9C%8B%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BE%83%E5%B0%8F%E6%95%B0%E6%8D%AE%E5%8D%95%E8%A1%A8%E7%9A%84io%E4%B8%8Ejdbc%E5%AF%B9%E6%AF%94">B站每周必看数据集（较小数据单表的I/O与JDBC对比）</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1">数据库设计</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5">数据导入</a></li>
+<li><a href="#io%E4%B8%8Edbms%E5%8A%9F%E8%83%BD">IO与DBMS功能</a></li>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0">程序实现</a>
+<ul>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83">运行环境</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86">数据预处理</a></li>
+<li><a href="#psql%E4%B8%8B%E5%BB%BA%E8%A1%A8%E5%8F%8A%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE">psql下建表及导入数据</a></li>
+<li><a href="#dbms%E4%BB%A5%E5%8F%8Aio%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5">DBMS以及IO数据导入</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95">性能测试</a>
+<ul>
+<li><a href="#jdbc">JDBC</a></li>
+<li><a href="#io">I/O</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#b%E7%AB%99user%E5%92%8Cuser%E5%88%B6%E4%BD%9C%E7%9A%84%E7%9F%AD%E8%A7%86%E9%A2%91%E6%95%B0%E6%8D%AE%E8%BE%83%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AF%B9%E6%AF%94">B站user和user制作的短视频数据（较大数据关系型数据库与文件系统对比）</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E7%94%9F%E6%88%90">数据集生成</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1-1">数据库设计</a></li>
+<li><a href="#io%E4%B8%8Edbms%E5%8A%9F%E8%83%BD-1">IO与DBMS功能</a></li>
+<li><a href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-1">性能测试</a>
+<ul>
+<li><a href="#jdbc%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%9B%BE">JDBC运行结果图</a></li>
+<li><a href="#io%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%9B%BE">I/O运行结果图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94">性能对比</a>
+<ul>
+<li><a href="#%E5%8D%95%E8%A1%A8io%E4%B8%8Ejdbc%E5%AF%B9%E6%AF%94%E5%B0%8F%E5%9E%8B%E6%95%B0%E6%8D%AE">单表I/O与JDBC对比，小型数据</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AF%B9%E6%AF%94%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E4%B8%A4%E8%A1%A8">关系型数据库与文件系统对比，大型数据，两表</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9F%A5%E9%98%85%E8%B5%84%E6%96%99%E5%B9%B6%E5%88%86%E6%9E%90%E7%BB%93%E6%9E%9C">查阅资料并分析结果</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="引言">引言 </h2>
+<h3 id="背景查询">背景查询 </h3>
+<p>通过查阅教材：</p>
+<blockquote>
+<p><strong>文件处理系统(file-processing system)</strong> 是传统的操作系统所支持的。永久记录被存储在多个不同的文件中，人们编写不同的应用程序来将记录从有关文件中取出或加入到适当的文件中。在数据库管理系统（DBMS）出现以前，各个组织通常都采用这样的系统来存储信息。</p>
+<p>在文件处理系统中存储组织信息的主要弊端包括：</p>
+<p>数据的冗余和不一致；数据访问困难；数据孤立；完整性问题；原子性问题；并发访问异常；安全性问题；</p>
+<p>--引自《数据库系统概念（原书第六版）》<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>2-3页</p>
+</blockquote>
+<h3 id="project目的">project目的 </h3>
+<p>比较文件系统和PostgreSQL在数据检索、更新等操作上的性能差异。</p>
+<h3 id="研究问题">研究问题 </h3>
+<ol>
+<li>不同存储机制对性能的影响</li>
+<li>数据库使用的数据结构的作用</li>
+</ol>
+<h3 id="report结构">Report结构 </h3>
+<p>报告对于两个不同的数据源分别探讨较小数据集单个表和较大数据集关系型数据库的性能差异，分别进行了I/O和JDBC的对比。</p>
+<p>将从数据库设计，数据导入，IO与DBMS功能，程序实现，性能测试，结果分析与机制对比，六个方面展开。</p>
+<p>实验所用的所有代码可以见附件或<a href="https://github.com/EarendelH/CS213_H_project1">github</a>。<strong>核心代码设计以及编写都由自己完成</strong>，此外部分代码使用了chatGPT以及github copilot补全和调整。</p>
+<h2 id="数据源">数据源 </h2>
+<p>首先在和鲸社区上找到一个较小的（12M）数据集<a href="https://www.heywhale.com/mw/dataset/6523c441b0f4556a312692c1">【B站每周必看】截至最新237期数据</a><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。后来发现数据量偏小，对于性能测试差距不明显，又使用了一个较大的数据集<a href="https://www.heywhale.com/mw/dataset/6347b53efcd8fca1f7dfba16/content">b站user和user制作的短视频数据</a><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>,而且因为含关注关系，可以探究关系型数据库的相关性能。</p>
+<h2 id="b站每周必看数据集较小数据单表的io与jdbc对比">B站每周必看数据集（较小数据单表的I/O与JDBC对比） </h2>
+<h3 id="数据库设计">数据库设计 </h3>
+<p>由于这次只探究数据库和文件系统的性能差异，所以数据库设计较为简单，只有一个表<code>videos</code>，包含以下字段(对应csv的heads)：</p>
+<ul>
+<li>term 期数</li>
+<li>duration 期数描述</li>
+<li>title 标题</li>
+<li>part 视频类型</li>
+<li>description 视频标签</li>
+<li>url 视频链接</li>
+<li>last_time 视频时长</li>
+<li>author up主</li>
+<li>mid up主_id</li>
+<li>aid aid（视频id）</li>
+<li>coins 投币数</li>
+<li>danmus 弹幕数</li>
+<li>favorites 收藏数</li>
+<li>likes 点赞数</li>
+<li>comments 评论数</li>
+<li>shares 分享数</li>
+<li>plays 播放数</li>
+<li>date 发布时间</li>
+</ul>
+<p>主键选择，由于可能出现同一个视频在不同期数被推荐，所以选择<code>term</code>和<code>aid</code>作为联合主键。</p>
+<h3 id="数据导入">数据导入 </h3>
+<p>实现并探究四种方式的数据导入：</p>
+<ol>
+<li>PostgreSQL数据库：
+<ol>
+<li>使用sql <code>INSERT</code>语句逐条插入。</li>
+<li>使用sql <code>COPY</code>语句批量插入。</li>
+<li>使用JAVA JDBC批量插入。</li>
+</ol>
+</li>
+<li>IO文件系统：
+<ol>
+<li>使用JAVA读取文件逐条插入。</li>
+</ol>
+</li>
+</ol>
+<h3 id="io与dbms功能">IO与DBMS功能 </h3>
+<p>仅为了测试DBMS的性能，实现了几个基础功能：</p>
+<ol>
+<li>建表<code>public void createtable()</code>(JDBC)</li>
+<li>导入数据<code>public void videos_reader()</code></li>
+<li>插入数据<code>public boolean ref_video</code></li>
+<li>删除数据<code>public boolean delete_video</code></li>
+<li>查询数据
+<ol>
+<li><code>public boolean select_author</code> 根据作者查询</li>
+<li><code>public boolean select_aid</code> 根据视频aid查询</li>
+</ol>
+</li>
+<li>更新数据<code>public boolean update_video</code></li>
+</ol>
+<h3 id="程序实现">程序实现 </h3>
+<h4 id="运行环境">运行环境 </h4>
+<blockquote>
+<p>本来是在windows下使用DataGrip进行开发，但是由于其的高内存占用（也可能是一年没用DataGrip了，电脑莫名跑不动，但是不想重装了）尝试了几次都是，导入仅仅8000行，18字段的数据就使用了1.5h左右的时间，而在Cmd下使用<code>psql -i</code>运行同样的sql文件只需要几秒，为了保证性能测试不被DataGrip影响，最后更换到Mac OS下直接使用zsh和vscode进行开发。</p>
+</blockquote>
+<ul>
+<li>System:MacOS 15.0 (24A335)</li>
+<li>Chip: Apple M1</li>
+<li>Total Number of Cores: 8 (4 performance and 4 efficiency)</li>
+<li>Memory: 8 GB</li>
+</ul>
+<h4 id="数据预处理">数据预处理 </h4>
+<p>使用Java的<a href="https://commons.apache.org/proper/commons-csv/apidocs/org/apache/commons/csv/package-summary.html">commons-csv</a><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>库读取csv文件，将数据以<code>INSERT</code>语句的形式写入<code>sqlscript.sql</code>文件。</p>
+<p>值得一提的是，使用commons-csv库读取csv文件时，就不用再对字段中存在的特殊符号再进行处理，比如<code>'</code>，<code>"</code>等，否则使用正则表达式处理会十分麻烦。</p>
+<h4 id="psql下建表及导入数据">psql下建表及导入数据 </h4>
+<ol>
+<li>
+<p>逐条插入<br>
+<code>sqlscript.sql</code>文件中的数据以<code>INSERT</code>语句的形式插入。</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-BEGIN">BEGIN</span> <span class="token keyword keyword-TRANSACTION">TRANSACTION</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> videos <span class="token punctuation">(</span>term<span class="token punctuation">,</span> duration<span class="token punctuation">,</span> title<span class="token punctuation">,</span> part<span class="token punctuation">,</span> url<span class="token punctuation">,</span> last_time<span class="token punctuation">,</span> author<span class="token punctuation">,</span> mid<span class="token punctuation">,</span> aid<span class="token punctuation">,</span> coins<span class="token punctuation">,</span> danmus<span class="token punctuation">,</span> favorites<span class="token punctuation">,</span> likes<span class="token punctuation">,</span> comments<span class="token punctuation">,</span> shares<span class="token punctuation">,</span> plays<span class="token punctuation">,</span> <span class="token keyword keyword-date">date</span><span class="token punctuation">)</span> <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'2019第1期 03.22 - 03.28'</span><span class="token punctuation">,</span> <span class="token string">'the real suger baby已知最高画质'</span><span class="token punctuation">,</span> <span class="token string">'音乐综合'</span><span class="token punctuation">,</span> <span class="token string">'https://b23.tv/BV16b411b71j'</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">,</span> <span class="token string">'一嗷垚'</span><span class="token punctuation">,</span> <span class="token number">30194033</span><span class="token punctuation">,</span> <span class="token number">45031807</span><span class="token punctuation">,</span> <span class="token number">240890</span><span class="token punctuation">,</span> <span class="token number">21841</span><span class="token punctuation">,</span> <span class="token number">703355</span><span class="token punctuation">,</span> <span class="token number">772538</span><span class="token punctuation">,</span> <span class="token number">19575</span><span class="token punctuation">,</span> <span class="token number">103901</span><span class="token punctuation">,</span> <span class="token number">29236360</span><span class="token punctuation">,</span> <span class="token string">'2019-03-01 18:48:18.0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token comment">--8103行</span>
+<span class="token keyword keyword-COMMIT">COMMIT</span><span class="token punctuation">;</span>
+</code></pre><p>在zsh下：</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>psql <span class="token parameter variable">-d</span> project1
+<span class="token assign-left variable">project1</span><span class="token operator">=</span><span class="token comment">#</span>
+    VACUUM<span class="token punctuation">;</span> <span class="token comment">#清理此前测试时数据库的数据</span>
+    <span class="token punctuation">\</span>timing <span class="token comment">#开启计时</span>
+    create table videos<span class="token punctuation">(</span>
+        term int  not null,
+        duration varchar not null ,
+        title varchar<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> not null ,
+        part varchar<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> not null ,
+        description varchar<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span> ,
+        url varchar<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> not null ,
+        last_time numeric not null,
+        author varchar<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> not null,
+        mid numeric not null,
+        aid numeric not null ,
+        coins numeric not null ,
+        danmus numeric not null ,
+        favorites numeric not null,
+        likes numeric not null ,
+        comments numeric not null ,
+        shares numeric not null ,
+        plays numeric not null ,
+        <span class="token function">date</span> timestamp<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> not null,
+        primary key <span class="token punctuation">(</span>term,aid<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">\</span>i sqlscript.sql<span class="token punctuation">;</span> <span class="token comment">#导入数据</span>
+</code></pre><p>运行时间：810.4ms</p>
+</li>
+<li>
+<p>批量插入<br>
+postgresql支持使用<code>COPY</code>直接从csv文件导入数据。</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token punctuation">\</span>COPY videos FROM <span class="token string">'./B站每周.csv'</span> DELIMITER <span class="token string">','</span> CSV HEADER<span class="token punctuation">;</span>
+</code></pre><p>运行时间：150.71ms<br>
+<img src="Project1_report/image-16.png" alt="alt text"></p>
+</li>
+</ol>
+<h4 id="dbms以及io数据导入">DBMS以及IO数据导入 </h4>
+<p>Java项目结构如下：</p>
+<pre data-role="codeBlock" data-info="none" class="language-none none"><code>- Client                    # 客户端main函数
+    - Video                 # 数据类
+    - DataScipt             # 数据库建立及数据导入
+        - DataBaseScript    # PostgreSQL数据库存储
+        - IOFileSCript      # JSON文件存储
+    - DataManner            # 操作实现接口
+        - DBManner          # DBMS操作实现
+        - FileManner        # 文件操作实现
+</code></pre><p>代码说明：</p>
+<ol>
+<li><code>Video</code>类：数据类，包含了视频的所有字段。</li>
+<li><code>DataScipt</code>：
+<ol>
+<li>类<code>DataBaseScript</code>
+<ul>
+<li>使用postgresql.42.2.5的<code>Connection</code>连接数据库，并在其中实现了建表和数据导入。使用<a href="https://commons.apache.org/proper/commons-csv/apidocs/org/apache/commons/csv/package-summary.html">commons-csv</a><sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4:1]</a></sup>库读取csv文件，数据导入使用<strong>关闭自动提交</strong>的<code>PreparedStatement</code>，并使用批处理在插入<strong>1000</strong>条数据后提交一次。</li>
+</ul>
+</li>
+<li>类<code>IOFileScript</code>
+<ul>
+<li>使用BufferReader读取csv文件并使用Google的<a href="https://github.com/google/gson">Gson</a><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>库将数据写入json文件。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><code>DataManner</code>：
+<ol>
+<li>接口<code>DataManner</code>：定义了数据库操作的接口。</li>
+<li>类<code>DBManner</code>：实现了<code>DataManner</code>接口，使用<code>Connection</code>连接数据库，实现了建表，插入，删除，查询，更新等操作。</li>
+<li>类<code>FileManner</code>：实现了<code>DataManner</code>接口，使用<code>BufferedReader</code>读取csv文件，实现了插入，删除，查询，更新等操作。</li>
+</ol>
+</li>
+</ol>
+<h3 id="性能测试">性能测试 </h3>
+<p>在Client.java中分别指定<code>String manipulator="DataBaseScript";</code>, <code>String manipulator="IOFileScript";</code>，得到JDBC和I/O运行结果，以运行时间作为衡量标准。</p>
+<h4 id="jdbc">JDBC </h4>
+<p><img src="Project1_report/image-2.png" alt="alt text"></p>
+<h4 id="io">I/O </h4>
+<p><img src="Project1_report/image.png" alt="alt text"></p>
+<h2 id="b站user和user制作的短视频数据较大数据关系型数据库与文件系统对比">B站user和user制作的短视频数据（较大数据关系型数据库与文件系统对比） </h2>
+<p>其实两个csv文件可以由视频和up主建立更复杂的关系型数据库，但是这里只为了对比性能，所以只用user.csv建立了两个表user和follows，并用up主的mid作为外键进行联系。</p>
+<p>由于在使用过程中发现 '<em>b站user和user制作的短视频数据</em>' 数据集中的数据结构在200行前后不一致，且关系无法自洽，想要建立外键约束时发现数据不一致。所以模仿该数据集结构，使用python脚本使用随机函数造了一个2000000行，932.5MB的数据集<code>random_users_data.csv</code>。</p>
+<h3 id="数据集生成">数据集生成 </h3>
+<ul>
+<li>mid使用1000000-3000000的所有不重复整数，并且打乱顺序。</li>
+<li>following_list使用随机函数生成，每个用户关注的人数在1-100之间，关注的人的mid在1000000-3000000之间。确保外键约束。</li>
+</ul>
+<p>详细代码见<a href="https://github.com/EarendelH/CS213_H_project1">github</a>。</p>
+<h3 id="数据库设计-1">数据库设计 </h3>
+<p>数据分析：random_users_data.csv内的字段有"mid",,"level","name","official_role","official_title","rank","sign","following_list"。</p>
+<p>user表设计：</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>    mid <span class="token keyword keyword-numeric">numeric</span> <span class="token keyword keyword-primary">primary</span> <span class="token keyword keyword-key">key</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-level">level</span> <span class="token keyword keyword-int">int</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    name <span class="token keyword keyword-varchar">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    official_role <span class="token keyword keyword-int">int</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    official_title <span class="token keyword keyword-varchar">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    rank <span class="token keyword keyword-int">int</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    sign <span class="token keyword keyword-varchar">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+</code></pre><p>follows表设计：</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>    <span class="token keyword keyword-following">following</span> <span class="token keyword keyword-numeric">numeric</span><span class="token punctuation">,</span>
+    follower <span class="token keyword keyword-numeric">numeric</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-primary">primary</span> <span class="token keyword keyword-key">key</span> <span class="token punctuation">(</span>follower<span class="token punctuation">,</span><span class="token keyword keyword-following">following</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-foreign">foreign</span> <span class="token keyword keyword-key">key</span> <span class="token punctuation">(</span>follower<span class="token punctuation">)</span> <span class="token keyword keyword-references">references</span> <span class="token keyword keyword-user">user</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-foreign">foreign</span> <span class="token keyword keyword-key">key</span> <span class="token punctuation">(</span><span class="token keyword keyword-following">following</span><span class="token punctuation">)</span> <span class="token keyword keyword-references">references</span> <span class="token keyword keyword-user">user</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span>
+</code></pre><h3 id="io与dbms功能-1">IO与DBMS功能 </h3>
+<p>仅为了测试DBMS的性能，实现了几个基础功能：</p>
+<ol>
+<li>建表<code>public void createtable()</code>(JDBC)</li>
+<li>导入数据<code>public void users_reader()</code></li>
+<li>插入数据
+<ol>
+<li><code>public boolean sign_user</code></li>
+<li><code>public boolean follow_user</code></li>
+</ol>
+</li>
+<li>删除数据
+<ol>
+<li><code>public boolean logout_user</code></li>
+<li><code>public boolean unfollow_user</code></li>
+</ol>
+</li>
+<li>查询数据
+<ol>
+<li><code>public boolean select_mid</code> 根据mid查询(主键)</li>
+<li><code>public boolean select_follower</code> 查询关注当前用户的用户</li>
+<li><code>public boolean select_following</code> 查询当前用户关注的用户(IO中直接存储有following_list)</li>
+</ol>
+</li>
+<li>更新数据<code>public boolean update_user</code></li>
+</ol>
+<p>其他操作同上</p>
+<h3 id="性能测试-1">性能测试 </h3>
+<h4 id="jdbc运行结果图">JDBC运行结果图 </h4>
+<p><img src="Project1_report/image-4.png" alt="alt text"><br>
+<img src="Project1_report/image-5.png" alt="alt text"><br>
+<img src="Project1_report/image-6.png" alt="alt text"></p>
+<p align="left">
+  <img src="Project1_report/image-7.png" alt="Image 1" style="weight: 30%;height:300px">
+  <img src="Project1_report/image-8.png" alt="Image 2" style="weight: 30%;height:300ps">
+</p>
+<p><img src="Project1_report/image-9.png" alt="alt text"></p>
+<h4 id="io运行结果图">I/O运行结果图 </h4>
+<p><img src="Project1_report/image-10.png" alt="alt text"><br>
+<img src="Project1_report/image-11.png" alt="alt text"></p>
+<h2 id="性能对比">性能对比 </h2>
+<h3 id="单表io与jdbc对比小型数据">单表I/O与JDBC对比，小型数据 </h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>JDBC(ms)</th>
+<th>I/O(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储数据</td>
+<td>324</td>
+<td>276</td>
+</tr>
+<tr>
+<td>查询(非主键)</td>
+<td>11</td>
+<td>78</td>
+</tr>
+<tr>
+<td>查询(主键)</td>
+<td>5</td>
+<td>40</td>
+</tr>
+<tr>
+<td>插入</td>
+<td>2</td>
+<td>205</td>
+</tr>
+<tr>
+<td>更新</td>
+<td>4</td>
+<td>106</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>0</td>
+<td>106</td>
+</tr>
+<tr>
+<td>占用空间</td>
+<td>10 MB</td>
+<td>5.2 MB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="关系型数据库与文件系统对比大型数据两表">关系型数据库与文件系统对比，大型数据，两表 </h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>JDBC(ms)</th>
+<th>I/O(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储数据</td>
+<td>33108+2562193=2595301</td>
+<td>14971</td>
+</tr>
+<tr>
+<td>查询mid(主键)</td>
+<td>28</td>
+<td>33389</td>
+</tr>
+<tr>
+<td>查询following</td>
+<td>10851</td>
+<td>13432</td>
+</tr>
+<tr>
+<td>查询follower</td>
+<td>10986</td>
+<td>19883</td>
+</tr>
+<tr>
+<td>插入user</td>
+<td>17</td>
+<td>87353</td>
+</tr>
+<tr>
+<td>插入follows</td>
+<td>1</td>
+<td>42764</td>
+</tr>
+<tr>
+<td>删除关注</td>
+<td>7681</td>
+<td>36671</td>
+</tr>
+<tr>
+<td>更新</td>
+<td>12</td>
+<td>34991</td>
+</tr>
+<tr>
+<td>删除用户</td>
+<td>15772</td>
+<td>38959</td>
+</tr>
+<tr>
+<td>占用空间</td>
+<td>4502 MB</td>
+<td>1296MB</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="查阅资料并分析结果">查阅资料并分析结果 </h2>
+<ol>
+<li>存储时间：当数据量较小时，I/O的存储时间较短，但是差距不明显，当数据量较大时，DBMS的存储时间远远大于I/O。这是因为在DBMS插入数据时，除了进行数据的存储，还要进行的操作有
+<ol>
+<li>
+<p>日志记录</p>
+</li>
+<li>
+<p>事务管理，在事务提交前，数据会被存储在内存中，而不是直接写入磁盘，这样可以减少磁盘I/O次数，提高性能。虽然我的代码中已经使用了5000条(small)，200000条(big)插入语句一次进行一次事务提交，但是还是会导致比I/O多出管理时间。</p>
+</li>
+<li>
+<p>数据处理，例如在我的实验中，将following_list字段拆分成另外一个表，最终形成了一个<strong>100800000</strong>行的表，这个表不仅有大量行，还有外键约束，从而需要很多时间。</p>
+</li>
+<li>
+<p>索引更新。小表的插入，大表插入user表，它们和I/O操作都是进行了一次完整的对数据csv文件的读取，而对于索引（在这里只有主键）的更新是两者时间差异的主要来源之一。进一步查看<code>pg_indexes</code>，postgresql主键索引是使用<code>btree</code>索引。在《数据库系统概念》<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup>的11.3详细阅读了有关<code>btree</code>的内容，发现其独特的结构有很多优势。<br>
+<img src="Project1_report/image-12.png" alt="alt text"></p>
+</li>
+<li>
+<p>约束检查，DBMS需要检查数据的完整性，外键约束，唯一性约束等，实验表中大部分字段含有非空约束，这也是导致DBMS插入时间远远大于I/O的原因之一。</p>
+</li>
+<li>
+<p>外键约束的检查。可以发现，在大型数据集的follows表进行插入语句时，DBMS所需要的时间是user的近80倍，I/O的近160倍，这是因为follows表的两个字段都有外键约束，导致了大量的检查操作。</p>
+</li>
+<li>
+<p>锁管理，数据库在插入操作时需要锁定相关的表或行，以防止并发操作导致数据的不一致或冲突。<br>
+<em><strong>除了上述原因，经过查阅教材和google，还有一些操作是DBMS在存储数据时需要进行，并可能导致更多时间消耗的，比如：</strong></em></p>
+</li>
+<li>
+<p>trigger的执行</p>
+</li>
+<li>
+<p>分区和分布式存储，在我的电脑上并不存在分布式系统，但对于分布式存储(DM-MIMD/SIMD)的超算或者服务器来说，数据库可以决定将数据存储到特定的分区或者节点。而各种网络协议、消息队列、以及IB交换机的配置等都会影响数据库的存储时间。使用单个文件I/O的方式，显然不需要考虑这些问题，但也会受限于单一硬件设备的读写速度。所以分布式存储也能够在其他性能上为DB带来显著的提升。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow></mrow><mrow><mo stretchy="false">(</mo><mi>T</mi><mi>O</mi><mi>D</mi><mi>O</mi><mo>:</mo><mtext>超算比赛中对于这一块有很多值得探索的地方，可以写在</mtext><mi>b</mi><mi>l</mi><mi>o</mi><mi>g</mi><mtext>里。</mtext><mo stretchy="false">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">_{(TODO:超算比赛中对于这一块有很多值得探索的地方，可以写在blog里。)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7em;vertical-align:-0.3552em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.5198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">TO</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">O</span><span class="mrel mtight">:</span><span class="mord cjk_fallback mtight">超算比赛中对于这一块有很多值得探索的地方，可以写在</span><span class="mord mathnormal mtight">b</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord cjk_fallback mtight">里。</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3552em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>主键查询时间
+<ol>
+<li>对于I/O，查询是通过对于文件逐行检索查询的，所以为了使结果不会由于制作数据时的字母表顺序影响，造数据时使用了<code>random.shuffle</code>，随机下，最好的情况是O(1)，最坏的情况是O(n)。</li>
+<li>而对于DBMS，查询是通过索引进行的，B树的查询时间复杂度是O(logn)，所以在查询主键时，DBMS的查询时间远远小于I/O。</li>
+</ol>
+</li>
+<li>非主键查询时间<br>
+尽管非主键（无索引）查询时间在DBMS中也是O(n)，但是由于DBMS有一些优化，使得查询时间会少于IO，如：
+<ol>
+<li>缓存，PostgreSQL使用共享缓冲区来缓存表和索引的数据页，从而减少了磁盘访问的次数，而I/O每次查询都需要从磁盘读取数据。</li>
+<li>数据库在执行全表扫描时会基于查询优化器生成查询计划，它会选择最佳路径来读取和扫描数据。</li>
+<li>多线程，数据库引擎可以将任务拆分成多个线程，多个 CPU 核心可以并行地处理表中的数据，进一步提升查询速度。数据库还会智能地安排I/O请求，最大化利用磁盘的带宽。IO默认是单线程的。</li>
+<li>数据结构优化，数据库系统对数据存储有深度优化，通常使用页（Page）作为基本的存储单位，优化了读写和数据检索的效率。</li>
+</ol>
+</li>
+<li>主键查询和非主键查询的对比。使用<code>EXPLAIN ANALYZE selct...</code>查看了查询计划，如下<br>
+<img src="Project1_report/image-13.png" alt="alt text"><br>
+<img src="Project1_report/image-15.png" alt="alt text"><br>
+可以发现，在查询主键时，DBMS使用了<code>INDEX SCAN</code>索引扫描，查询时间非常快,而在查询非主键时，DBMS使用了<code>GATHER</code>并行查询，启用了两个worker，虽然比查询主键慢了很多，但是也比I/O快了很多。<br>
+再在<code>follows</code>表的查询也explain了一下，又有一个有趣的发现。<br>
+<img src="Project1_report/image-14.png" alt="alt text"><br>
+主键查询时，在sql中直接执行select语句比使用JDBC调度函数进行查询，时间有比较明显的差异(0.035ms vs 28ms)，不过当数据量大，且非主键查询时，查询时间差异就很小了(10844ms vs 10851ms) 体现了数据库与JDBC的连接以及JDBC函数的调用也是存在一定ms级别的开销。</li>
+<li>插入与更新时间：DBMS的优势在插入新数据时体现的更为明显，无论是小表还是大表，IO都是DBMS都是几百倍以上的时间。查询时在《数据库系统概念》<sup class="footnote-ref"><a href="#fn1" id="fnref1:2">[1:2]</a></sup>10.5相关内容中读到，数据库文件有指针结构，可以直接定位到插入与删除的位置，而I/O则必需要进行逐行读取，这也是导致DBMS插入时间远远小于I/O的原因之一。比如：插入一个user，DBMS可以直接找到在文件末尾插入，而I/O则需要将整个文件读取，再在末尾进行插入。插入一个follow关系，因为在这个follow表中只有两个字段，所以即使需要外键约束检查，也比user表插入快很多。而在I/O中，插入一个follow关系，需要先读取文件，直到找到mid对应的行，再写入文件，所以时间也是比user表插入慢很多；比user快的原因是找到后就会break，而不需要读后面的内容。</li>
+<li>删除数据时间：在删除数据时，DBMS的时间也远远小于I/O的原因与插入和更新相似。不再分析。但是删除比插入和更新慢的可能的原因有：
+<ol>
+<li>删除包括一个对表的搜索操作，需要一定时间开销。</li>
+<li>PostgreSQL使用MVCC，插入操作只需创建新的数据版本，不会影响其他事务对历史版本的读取。删除操作会产生一个新的版本，而不是直接删除数据，同时，数据库系统还需要额外的后台进程（VACUUM）来清理这些标记为删除的行，以释放磁盘空间。这些版本管理和后台操作都会增加删除操作的耗时。</li>
+<li>删除user表的时间比follows表的时间长，这是因为子表的删除不需要检查外键约束，而主表的删除需要检查外键约束，同时，这也是导致DBMS删除时间比I/O删除时间长的原因之一。</li>
+</ol>
+</li>
+<li>空间占用：以大数据集为研究对象，原csv文件932.5MB，DBMS占用空间4502MB,I/O转化的json占用空间1296MB,可以看出DBMS占用空间显著大于IO和原数据。分析空间占用：
+<ol>
+<li>
+<p>原csv数据集</p>
+<ol>
+<li><strong>mid</strong>: 用户ID为7位数字，长度为7字节。</li>
+<li><strong>level</strong>: 用户等级为1到10之间的数字，最多为2字节。</li>
+<li><strong>name</strong>: 用户名为8个字符的随机字母，长度为8字节。</li>
+<li><strong>official_role</strong>: 官方认证形式为0, 1, 2之间的数字，长度为1字节。</li>
+<li><strong>official_title</strong>: 官方认证头衔为7个字符的随机字母，长度为7字节。</li>
+<li><strong>rank</strong>: 排名为1到200000000之间的数字，最多为9字节。</li>
+<li><strong>sign</strong>: 签名为20个随机字母和数字，长度为20字节。</li>
+<li><strong>following_list</strong>: 关注列表包含1到100个用户ID，每个ID为7位数字，每个ID之间用逗号分隔。假设平均包含50个ID，每个ID为7字节，49个逗号，共计约 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mo>×</mo><mn>7</mn><mo>+</mo><mn>49</mn><mo>=</mo><mn>399</mn></mrow><annotation encoding="application/x-tex">50 \times 7 + 49 = 399</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">50</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">49</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">399</span></span></span></span> 字节。</li>
+<li>逗号分隔符和换行符：每行有7个逗号，1个换行符，合计8字节。</li>
+</ol>
+<p>因此，每行数据的估算总大小为：<br>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>7</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>8</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>7</mn><mo>+</mo><mn>9</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>399</mn><mo>+</mo><mn>8</mn><mo>=</mo><mn>461</mn><mtext>byte</mtext></mrow><annotation encoding="application/x-tex">7 + 2 + 8 + 1 + 7 + 9 + 20 + 399 + 8 = 461 \text{byte}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">9</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">20</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">399</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">461</span><span class="mord text"><span class="mord">byte</span></span></span></span></span></span><br>
+如果每行数据大约占用 461字节，总共有 2000000 行数据，那么总大小为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>461</mn><mo>×</mo><mn>2000000</mn><mo>=</mo><mn>922</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>000</mn><mtext>&nbsp;byte</mtext></mrow><annotation encoding="application/x-tex">461 \times 2000000 = 922,000,000 \ \text{byte}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">461</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2000000</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">922</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mspace">&nbsp;</span><span class="mord text"><span class="mord">byte</span></span></span></span></span></span><br>
+即<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>922.0</mn><mtext>&nbsp;MB</mtext></mrow><annotation encoding="application/x-tex">922.0 \ \text{MB}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">922.0</span><span class="mspace">&nbsp;</span><span class="mord text"><span class="mord">MB</span></span></span></span></span><br>
+这与原数据集的大小,即<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>932.5</mn><mtext>&nbsp;MB</mtext></mrow><annotation encoding="application/x-tex">932.5 \ \text{MB}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">932.5</span><span class="mspace">&nbsp;</span><span class="mord text"><span class="mord">MB</span></span></span></span></span>相符。</p>
+</li>
+<li>
+<p>DB数据库:</p>
+<ol>
+<li>字段及字节占用：</li>
+</ol>
+<ul>
+<li>mid: 16 字节 (numeric)</li>
+<li>level: 4 字节 (integer)</li>
+<li>name: 100 字节 + 4 字节 (长度信息) = 104 字节</li>
+<li>official_role: 4 字节 (integer)</li>
+<li>official_title: 100 字节 + 4 字节 (长度信息) = 104 字节</li>
+<li>rank: 4 字节 (integer)</li>
+<li>sign: 100 字节 + 4 字节 (长度信息) = 104 字节<br>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>16</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>104</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>104</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>104</mn><mo>=</mo><mn>340</mn><mtext>byte</mtext></mrow><annotation encoding="application/x-tex">16 + 4 + 104 + 4 + 104 + 4 + 104 = 340 \text{byte}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">104</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">104</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">104</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">340</span><span class="mord text"><span class="mord">byte</span></span></span></span></span></span></li>
+<li>following: 16 字节 (numeric)</li>
+<li>follower: 16 字节 (numeric)<br>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>16</mn><mo>+</mo><mn>16</mn><mo>=</mo><mn>32</mn><mtext>byte</mtext></mrow><annotation encoding="application/x-tex">16 + 16 = 32 \text{byte}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">32</span><span class="mord text"><span class="mord">byte</span></span></span></span></span></span><br>
+总计<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>340</mn><mo>×</mo><mn>2000000</mn><mo>+</mo><mn>32</mn><mo>×</mo><mn>100800000</mn><mo>=</mo><mn>3905600000</mn><mtext>byte</mtext><mo>=</mo><mn>3727</mn><mtext>MB</mtext></mrow><annotation encoding="application/x-tex">340\times 2000000 + 32\times 100800000 = 3905600000 \text{byte} = 3727 \text{MB}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">340</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2000000</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">32</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100800000</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">3905600000</span><span class="mord text"><span class="mord">byte</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">3727</span><span class="mord text"><span class="mord">MB</span></span></span></span></span></span></li>
+</ul>
+<ol start="2">
+<li>其他占用：<br>
+数据库除了存储数据外，还需要存储元数据，如表结构、索引、约束等，这些元数据也会占用一定的空间。另外，数据库还需要预留一定的空间用于存储数据，以便数据的插入、更新等操作。因此，数据库的实际占用空间会比计算出来的占用更大。</li>
+</ol>
+</li>
+<li>
+<p>I/O文件：</p>
+<ol>
+<li>json文件的大小为1296MB，这是因为json文件中的每个数据都会被转换为字符串，而字符串的存储空间通常比二进制数据要大，因此json文件的大小会比原始数据文件的大小要大。</li>
+<li>json文件中还包含了一些元数据，如字段名、字段类型等，这些元数据也会占用一定的空间。<br>
+综上所述，DBMS实际上是使用了更多的空间来换取更多的功能，在内存有限时，使用IO文件系统管理也可能是更好的选择。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="总结">总结 </h2>
+<p>数据库优化了数据结构，并附带了一系列功能，通过首次导入数据时更长的时间消耗，更大的空间占用，来换取后续查询，插入，更新，删除等操作的更快速度。以及安全性，完整性，一致性等特性。在实现DBMS和I/O的Java project时，也能发现JDBC更为模版化，更为方便，而I/O则需要更多的代码实现，更多的数据处理，更多的debug操作。在实际应用中，如果数据量较小，且对数据的操作不是很频繁，使用I/O文件系统可能是好的选择。而对于信息时代更常见的数据量极大的场景，且对数据的操作频繁，使用DBMS以及对DBMS优化是更好的、<strong>一劳永逸</strong>的选择。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>《数据库系统概念（原书第六版）》，Abraham Silberschatz; Henry F. Korth; S. Sudarshan，杨冬青,李红燕,唐世渭等译。 <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a> <a href="#fnref1:2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Blues 🐋🐋. 【B站每周必看】截至最新237期数据. 2023. <a href="https://www.heywhale.com/mw/dataset/6523c441b0f4556a312692c1">https://www.heywhale.com/mw/dataset/6523c441b0f4556a312692c1</a>. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>LXRee. b站user和user制作的短视频数据. 2022. <a href="https://www.heywhale.com/mw/dataset/6347b53efcd8fca1f7dfba16">https://www.heywhale.com/mw/dataset/6347b53efcd8fca1f7dfba16</a>. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Apache Commons CSV. <a href="https://commons.apache.org/proper/commons-csv/user-guide.html">https://commons.apache.org/proper/commons-csv/user-guide.html</a>. <a href="#fnref4" class="footnote-backref">↩︎</a> <a href="#fnref4:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Google Gson <a href="https://github.com/google/gson">https://github.com/google/gson</a>. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
